@@ -24,7 +24,6 @@ import omni.anim.graph.core as ag
 import isaacsim.replicator.agent.core
 from isaacsim.replicator.agent.core.settings import PrimPaths
 from isaacsim.replicator.agent.core.stage_util import CharacterUtil
-from isaacsim.replicator.agent.core.simulation import SimulationManager
 
 # Extension APIs
 from pegasus.simulator.logic.state import State
