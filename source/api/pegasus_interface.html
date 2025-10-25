@@ -140,7 +140,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="pegasus.simulator.logic.interface.pegasus_interface.PegasusInterface">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pegasus.simulator.logic.interface.pegasus_interface.</span></span><span class="sig-name descname"><span class="pre">PegasusInterface</span></span><a class="headerlink" href="#pegasus.simulator.logic.interface.pegasus_interface.PegasusInterface" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>PegasusInterface is a singleton class (there is only one object instance at any given time) that will be used
 to</p>
 <p><strong>Methods:</strong></p>
@@ -285,7 +285,7 @@ returns the existing instance of the PegasusInterface class.</p>
 <dd><p>_summary_</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – _description_</p>
+<dd class="field-odd"><p><strong>file</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – _description_</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>_description_</p>
@@ -305,7 +305,7 @@ returns the existing instance of the PegasusInterface class.</p>
 <dd class="field-odd"><p>A list of all vehicles that are currently instantiated.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)">list</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -322,7 +322,7 @@ returns the existing instance of the PegasusInterface class.</p>
 <dd><p>Method that returns the vehicle object given its ‘stage_prefix’, i.e., the name the vehicle was spawned with in the simulator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>stage_prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The name the vehicle will present in the simulator when spawned.</p>
+<dd class="field-odd"><p><strong>stage_prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The name the vehicle will present in the simulator when spawned.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a vehicle object that was spawned with the given ‘stage_prefix’</p>
@@ -346,8 +346,8 @@ returns the existing instance of the PegasusInterface class.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>usd_asset</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The path where the USD file describing the world is located.</p></li>
-<li><p><strong>stage_prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The name the vehicle will present in the simulator when spawned.</p></li>
+<li><p><strong>usd_asset</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The path where the USD file describing the world is located.</p></li>
+<li><p><strong>stage_prefix</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The name the vehicle will present in the simulator when spawned.</p></li>
 </ul>
 </dd>
 </dl>
@@ -362,8 +362,8 @@ and when we are operating in App mode, we want everything to run in sync.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>usd_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The path where the USD file describing the world is located.</p></li>
-<li><p><strong>force_clear</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – Whether to perform a clear before loading the asset. Defaults to False.</p></li>
+<li><p><strong>usd_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The path where the USD file describing the world is located.</p></li>
+<li><p><strong>force_clear</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether to perform a clear before loading the asset. Defaults to False.</p></li>
 </ul>
 </dd>
 </dl>
@@ -376,8 +376,8 @@ and when we are operating in App mode, we want everything to run in sync.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>usd_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The path where the USD file describing the world is located.</p></li>
-<li><p><strong>force_clear</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – Whether to perform a clear before loading the asset. Defaults to False.</p></li>
+<li><p><strong>usd_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The path where the USD file describing the world is located.</p></li>
+<li><p><strong>force_clear</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>) – Whether to perform a clear before loading the asset. Defaults to False.</p></li>
 <li><p><strong>App</strong> (<em>It should be set to True only if the method is invoked from an</em>) – </p></li>
 </ul>
 </dd>
@@ -390,7 +390,7 @@ and when we are operating in App mode, we want everything to run in sync.</p>
 <dd><p>Method that is used to load NVidia internally provided USD stages into the simulaton World</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>environment_asset</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The name of the nvidia asset inside the /Isaac/Environments folder. Default to Hospital/hospital.usd.</p>
+<dd class="field-odd"><p><strong>environment_asset</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The name of the nvidia asset inside the /Isaac/Environments folder. Default to Hospital/hospital.usd.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -401,7 +401,7 @@ and when we are operating in App mode, we want everything to run in sync.</p>
 <dd><p>Method that allows a user to save a new ArduPilot default airframe for the extension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>airframe</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The new ArduPilot default airframe</p>
+<dd class="field-odd"><p><strong>airframe</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The new ArduPilot default airframe</p>
 </dd>
 </dl>
 </dd></dl>
@@ -412,7 +412,7 @@ and when we are operating in App mode, we want everything to run in sync.</p>
 <dd><p>Method that allows a user to save a new ArduPilot directory in the configuration files of the extension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>absolute_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The new path of the ArduPilot installation directory</p>
+<dd class="field-odd"><p><strong>absolute_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The new path of the ArduPilot installation directory</p>
 </dd>
 </dl>
 </dd></dl>
@@ -431,9 +431,9 @@ default global coordinates specified in the extension configuration file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>latitude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a>) – The latitude of the origin of the simulated world in degrees. Defaults to None.</p></li>
-<li><p><strong>longitude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a>) – The longitude of the origin of the simulated world in degrees. Defaults to None.</p></li>
-<li><p><strong>altitude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a>) – The altitude of the origin of the simulated world in meters. Defaults to None.</p></li>
+<li><p><strong>latitude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – The latitude of the origin of the simulated world in degrees. Defaults to None.</p></li>
+<li><p><strong>longitude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – The longitude of the origin of the simulated world in degrees. Defaults to None.</p></li>
+<li><p><strong>altitude</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – The altitude of the origin of the simulated world in meters. Defaults to None.</p></li>
 </ul>
 </dd>
 </dl>
@@ -452,7 +452,7 @@ default global coordinates specified in the extension configuration file</p>
 <dd><p>Method that allows a user to save a new px4 default airframe for the extension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>absolute_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The new px4 default airframe</p>
+<dd class="field-odd"><p><strong>absolute_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The new px4 default airframe</p>
 </dd>
 </dl>
 </dd></dl>
@@ -463,7 +463,7 @@ default global coordinates specified in the extension configuration file</p>
 <dd><p>Method that allows a user to save a new px4 directory in the configuration files of the extension.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>absolute_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – The new path of the px4-autopilot installation directory</p>
+<dd class="field-odd"><p><strong>absolute_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – The new path of the px4-autopilot installation directory</p>
 </dd>
 </dl>
 </dd></dl>
@@ -475,8 +475,8 @@ default global coordinates specified in the extension configuration file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>camera_position</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a>) – A list with [X, Y, Z] coordinates of the camera in ENU inertial frame.</p></li>
-<li><p><strong>camera_target</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a>) – A list with [X, Y, Z] coordinates of the target that the camera should point to in the ENU inertial frame.</p></li>
+<li><p><strong>camera_position</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – A list with [X, Y, Z] coordinates of the camera in ENU inertial frame.</p></li>
+<li><p><strong>camera_target</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – A list with [X, Y, Z] coordinates of the target that the camera should point to in the ENU inertial frame.</p></li>
 </ul>
 </dd>
 </dl>
@@ -498,7 +498,7 @@ For now these new setting will never override the default ones.</p>
 <dd class="field-odd"><p>The latitude of the origin of the simulated world in meters.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -512,7 +512,7 @@ For now these new setting will never override the default ones.</p>
 <dd class="field-odd"><p>A string with the ArduPilot default airframe (if it was setup). Otherwise it is None.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -526,7 +526,7 @@ For now these new setting will never override the default ones.</p>
 <dd class="field-odd"><p>A string with the installation directory for ArduPilot (if it was setup). Otherwise it is None.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -540,7 +540,7 @@ For now these new setting will never override the default ones.</p>
 <dd class="field-odd"><p>The latitude of the origin of the simulated world in degrees.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -554,7 +554,7 @@ For now these new setting will never override the default ones.</p>
 <dd class="field-odd"><p>The longitude of the origin of the simulated world in degrees.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)">float</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -568,7 +568,7 @@ For now these new setting will never override the default ones.</p>
 <dd class="field-odd"><p>A string with the PX4 default airframe (if it was setup). Otherwise it is None.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -582,7 +582,7 @@ For now these new setting will never override the default ones.</p>
 <dd class="field-odd"><p>A string with the installation directory for PX4 (if it was setup). Otherwise it is None.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
 </dd>
 </dl>
 </dd></dl>

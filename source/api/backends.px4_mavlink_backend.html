@@ -253,8 +253,8 @@ on each rotor of the vehicle</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>time_usec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The total time elapsed since the simulation started - Ignored argument</p></li>
-<li><p><strong>controls</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a>) – A list of ints which contains the thrust_control received via mavlink</p></li>
+<li><p><strong>time_usec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – The total time elapsed since the simulation started - Ignored argument</p></li>
+<li><p><strong>controls</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><em>list</em></a>) – A list of ints which contains the thrust_control received via mavlink</p></li>
 <li><p><strong>flags</strong> – Ignored argument</p></li>
 </ul>
 </dd>
@@ -291,7 +291,7 @@ on each rotor of the vehicle</p>
 <dd><p>Method that is used to send simulated GPS data through the mavlink protocol.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>time_usec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The total time elapsed since the simulation started</p>
+<dd class="field-odd"><p><strong>time_usec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – The total time elapsed since the simulation started</p>
 </dd>
 </dl>
 </dd></dl>
@@ -302,7 +302,7 @@ on each rotor of the vehicle</p>
 <dd><p>Method that is used to send the groundtruth data of the vehicle through mavlink</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>time_usec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The total time elapsed since the simulation started</p>
+<dd class="field-odd"><p><strong>time_usec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – The total time elapsed since the simulation started</p>
 </dd>
 </dl>
 </dd></dl>
@@ -313,7 +313,7 @@ on each rotor of the vehicle</p>
 <dd><p>Method that is used to publish an heartbear through mavlink protocol</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>mav_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The ID that indicates the type of vehicle. Defaults to MAV_TYPE_GENERIC=0</p>
+<dd class="field-odd"><p><strong>mav_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – The ID that indicates the type of vehicle. Defaults to MAV_TYPE_GENERIC=0</p>
 </dd>
 </dl>
 </dd></dl>
@@ -324,7 +324,7 @@ on each rotor of the vehicle</p>
 <dd><p>Method that when invoked, will send the simulated sensor data through mavlink</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>time_usec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The total time elapsed since the simulation started</p>
+<dd class="field-odd"><p><strong>time_usec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – The total time elapsed since the simulation started</p>
 </dd>
 </dl>
 </dd></dl>
@@ -335,7 +335,7 @@ on each rotor of the vehicle</p>
 <dd><p>Method that is used to send simulated vision/mocap data through the mavlink protocol.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>time_usec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The total time elapsed since the simulation started</p>
+<dd class="field-odd"><p><strong>time_usec</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – The total time elapsed since the simulation started</p>
 </dd>
 </dl>
 </dd></dl>
@@ -360,7 +360,7 @@ mavlink connection will be closed and also that the PX4 background process gets 
 <dd><p>Method that is called at every physics step to send data to px4 and receive the control inputs via mavlink</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dt</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a>) – The time elapsed between the previous and current function calls (s).</p>
+<dd class="field-odd"><p><strong>dt</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – The time elapsed between the previous and current function calls (s).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -371,7 +371,7 @@ mavlink connection will be closed and also that the PX4 background process gets 
 <dd><p>Gets called by the ‘update_sensor’ method to update the current Barometer data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – The data produced by an Barometer sensor</p>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – The data produced by an Barometer sensor</p>
 </dd>
 </dl>
 </dd></dl>
@@ -382,7 +382,7 @@ mavlink connection will be closed and also that the PX4 background process gets 
 <dd><p>Gets called by the ‘update_sensor’ method to update the current GPS data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – The data produced by an GPS sensor</p>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – The data produced by an GPS sensor</p>
 </dd>
 </dl>
 </dd></dl>
@@ -394,8 +394,8 @@ mavlink connection will be closed and also that the PX4 background process gets 
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sensor_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – A name that describes the type of sensor (for example MonocularCamera)</p></li>
-<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – A dictionary that contains the data produced by the sensor</p></li>
+<li><p><strong>sensor_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – A name that describes the type of sensor (for example MonocularCamera)</p></li>
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – A dictionary that contains the data produced by the sensor</p></li>
 </ul>
 </dd>
 </dl>
@@ -407,7 +407,7 @@ mavlink connection will be closed and also that the PX4 background process gets 
 <dd><p>Gets called by the ‘update_sensor’ method to update the current IMU data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – The data produced by an IMU sensor</p>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – The data produced by an IMU sensor</p>
 </dd>
 </dl>
 </dd></dl>
@@ -418,7 +418,7 @@ mavlink connection will be closed and also that the PX4 background process gets 
 <dd><p>Gets called by the ‘update_sensor’ method to update the current Vision data</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – The data produced by an Vision sensor</p>
+<dd class="field-odd"><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – The data produced by an Vision sensor</p>
 </dd>
 </dl>
 </dd></dl>
@@ -432,8 +432,8 @@ sensor data that gets passed to this function is discarded.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sensor_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – A name that describes the type of sensor</p></li>
-<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – A dictionary that contains the data produced by the sensor</p></li>
+<li><p><strong>sensor_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – A name that describes the type of sensor</p></li>
+<li><p><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – A dictionary that contains the data produced by the sensor</p></li>
 </ul>
 </dd>
 </dl>
@@ -488,7 +488,7 @@ if an hearbeat is received via mavlink. When this first heartbeat is received po
 <dd><p>Initialize the PX4MavlinkBackendConfig class</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.13)"><em>dict</em></a>) – A Dictionary that contains all the parameters for configuring the Mavlink interface - it can be empty or only have some of the parameters used by this backend.</p>
+<dd class="field-odd"><p><strong>config</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.14)"><em>dict</em></a>) – A Dictionary that contains all the parameters for configuring the Mavlink interface - it can be empty or only have some of the parameters used by this backend.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
