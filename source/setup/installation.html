@@ -121,14 +121,14 @@
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
 <section id="installing-nvidia-isaac-sim">
 <h2>Installing NVIDIA Isaac Sim<a class="headerlink" href="#installing-nvidia-isaac-sim" title="Permalink to this heading"></a></h2>
-<a class="reference external image-reference" href="https://developer.nvidia.com/isaac-sim"><img alt="IsaacSim 4.5.0" src="https://img.shields.io/badge/IsaacSim-4.5.0-brightgreen.svg" /></a>
+<a class="reference external image-reference" href="https://developer.nvidia.com/isaac-sim"><img alt="IsaacSim 5.1.0" src="https://img.shields.io/badge/IsaacSim-5.1.0-brightgreen.svg" /></a>
 <a class="reference external image-reference" href="https://github.com/PX4/PX4-Autopilot"><img alt="PX4-Autopilot 1.14.3" src="https://img.shields.io/badge/PX4--Autopilot-1.14.3-brightgreen.svg" /></a>
 <a class="reference external image-reference" href="https://releases.ubuntu.com/22.04/"><img alt="Ubuntu 22.04" src="https://img.shields.io/badge/Ubuntu-22.04LTS-brightgreen.svg" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We have tested Pegasus Simulator with Isaac Sim 4.5.0 release on Ubuntu 22.04LTS with NVIDIA driver 550.163.01. The PX4-Autopilot used during development was v.14.3. Older versions Ubuntu and PX4-Autopilot were not tested. This extension was not tested on Windows.</p>
+<p>We have tested Pegasus Simulator with Isaac Sim 5.1.0 release on Ubuntu 22.04LTS with NVIDIA driver 550.163.01. The PX4-Autopilot used during development was v.14.3. Older versions Ubuntu and PX4-Autopilot were not tested. This extension was not tested on Windows.</p>
 </div>
-<p>In order to install Isaac Sim on linux, download the zip file containing the <a class="reference external" href="https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip">Workstation Installation here</a> or run the following lines on the terminal:</p>
+<p>In order to install Isaac Sim on linux, download the zip file containing the <a class="reference external" href="https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone-5.1.0-linux-x86_64.zip">Workstation Installation here</a> or run the following lines on the terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Go to the home directory</span>
 <span class="nb">cd</span><span class="w"> </span>~
 
@@ -137,20 +137,20 @@ mkdir<span class="w"> </span>-p<span class="w"> </span>isaacsim
 <span class="nb">cd</span><span class="w"> </span>isaacsim
 
 <span class="c1"># Download the zip file containing the Isaac Sim installation</span>
-wget<span class="w"> </span>https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip
+wget<span class="w"> </span>https://download.isaacsim.omniverse.nvidia.com/isaac-sim-standalone-5.1.0-linux-x86_64.zip
 
 <span class="c1"># Unzip the file</span>
-unzip<span class="w"> </span>isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip
+unzip<span class="w"> </span>isaac-sim-standalone-5.1.0-linux-x86_64.zip
 
 <span class="c1"># Run the post-installation scripts</span>
 ./post_install.sh
 ./isaac-sim.selector.sh
 
 <span class="c1"># Delete the zip file</span>
-rm<span class="w"> </span>isaac-sim-standalone%404.5.0-rc.36%2Brelease.19112.f59b3005.gl.linux-x86_64.release.zip
+rm<span class="w"> </span>isaac-sim-standalone-5.1.0-linux-x86_64.zip
 </pre></div>
 </div>
-<p>The short video with the installation guide for Pegasus Simulator is also available <a class="reference external" href="https://youtu.be/YCp5E8nazag">here</a>, but the Isaac Sim install method presented is no longer available. You should follow the instructions above to install Isaac Sim 4.5.0. <strong>See video from 1:25 min onwards for the installation of Pegasus Simulator.</strong></p>
+<p>The short video with the installation guide for Pegasus Simulator is also available <a class="reference external" href="https://youtu.be/YCp5E8nazag">here</a>, but the Isaac Sim install method presented is no longer available. You should follow the instructions above to install Isaac Sim 5.1.0. <strong>See video from 1:25 min onwards for the installation of Pegasus Simulator.</strong></p>
 <blockquote>
 <div><div class="video_wrapper align-center" style="padding-bottom: 56.250000%; padding-top: 30px; position: relative; text-align: center; width: 100%">
 <iframe allowfullscreen="true" src="https://www.youtube.com/embed/YCp5E8nazag" style="border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%">
@@ -164,17 +164,101 @@ from python scripts. As such, we recommend setting up a few custom environment v
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Although it is possible to setup a virtual environment following the
-instructions <a class="reference external" href="https://docs.isaacsim.omniverse.nvidia.com/4.5.0/installation/install_python.html">here</a>, this
+instructions <a class="reference external" href="https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/install_python.html">here</a>, this
 feature was not tested.</p>
 </div>
 <p>Start by locating the <strong>Isaac Sim installation</strong> by navigating to Isaac Sim’s root folder. Typically, in Linux, this folder can be found under <code class="docutils literal notranslate"><span class="pre">${HOME}/isaac_sim</span></code>.</p>
 <p>Add the following lines to your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> or <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Isaac Sim root directory</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ---------------------------</span>
+<span class="c1"># ISAAC SIM SETUP</span>
+<span class="c1"># ---------------------------</span>
+<span class="c1"># Isaac Sim root directory</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">ISAACSIM_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/isaacsim&quot;</span>
 <span class="c1"># Isaac Sim python executable</span>
-<span class="nb">alias</span><span class="w"> </span><span class="nv">ISAACSIM_PYTHON</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ISAACSIM_PATH</span><span class="si">}</span><span class="s2">/python.sh&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ISAACSIM_PYTHON</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ISAACSIM_PATH</span><span class="si">}</span><span class="s2">/python.sh&quot;</span>
 <span class="c1"># Isaac Sim app</span>
-<span class="nb">alias</span><span class="w"> </span><span class="nv">ISAACSIM</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ISAACSIM_PATH</span><span class="si">}</span><span class="s2">/isaac-sim.sh&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ISAACSIM</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ISAACSIM_PATH</span><span class="si">}</span><span class="s2">/isaac-sim.sh&quot;</span>
+
+<span class="c1"># Define an auxiliary function to launch Isaac Sim or run scripts with Isaac Sim&#39;s python</span>
+<span class="c1"># This is done to avoid conflicts between ROS 2 and Isaac Sim&#39;s Python environment</span>
+isaac_run<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span><span class="c1"># ------------------</span>
+<span class="w">    </span><span class="c1"># === VALIDATION ===</span>
+<span class="w">    </span><span class="c1"># ------------------</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-x<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ISAACSIM_PYTHON</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;❌ IsaacSim python.sh not found at: </span><span class="nv">$ISAACSIM_PYTHON</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-x<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$ISAACSIM</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;❌ IsaacSim launcher not found at: </span><span class="nv">$ISAACSIM</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="c1"># -------------------------</span>
+<span class="w">    </span><span class="c1"># === CLEAN ENVIRONMENT ===</span>
+<span class="w">    </span><span class="c1"># -------------------------</span>
+<span class="w">    </span><span class="c1"># Unset ROS 2 environment variables to avoid conflicts with Isaac&#39;s Python 3.11</span>
+<span class="w">    </span><span class="nb">unset</span><span class="w"> </span>ROS_VERSION<span class="w"> </span>ROS_PYTHON_VERSION<span class="w"> </span>ROS_DISTRO<span class="w"> </span>AMENT_PREFIX_PATH<span class="w"> </span>COLCON_PREFIX_PATH<span class="w"> </span>PYTHONPATH<span class="w"> </span>CMAKE_PREFIX_PATH
+
+<span class="w">    </span><span class="c1"># Remove ROS 2 paths from LD_LIBRARY_PATH if present</span>
+<span class="w">    </span><span class="nb">local</span><span class="w"> </span><span class="nv">ros_paths</span><span class="o">=(</span><span class="s2">&quot;/opt/ros/humble&quot;</span><span class="w"> </span><span class="s2">&quot;/opt/ros/jazzy&quot;</span><span class="w"> </span><span class="s2">&quot;/opt/ros/iron&quot;</span><span class="o">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span>ros_path<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ros_paths</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LD_LIBRARY_PATH</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;^</span><span class="si">${</span><span class="nv">ros_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>paste<span class="w"> </span>-sd<span class="s1">&#39;:&#39;</span><span class="w"> </span>-<span class="k">)</span>
+<span class="w">    </span><span class="k">done</span>
+
+<span class="w">    </span><span class="c1"># -----------------------------</span>
+<span class="w">    </span><span class="c1"># === UBUNTU VERSION CHECK ===</span>
+<span class="w">    </span><span class="c1"># -----------------------------</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nv">UBUNTU_VERSION</span><span class="o">=</span><span class="k">$(</span>grep<span class="w"> </span><span class="s2">&quot;^VERSION_ID=&quot;</span><span class="w"> </span>/etc/os-release<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="s1">&#39;&quot;&#39;</span><span class="w"> </span>-f2<span class="k">)</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="c1"># If Ubuntu 24.04 -&gt; use the Isaac Sim internal ROS2 Jazzy (ROS2 Jazzy bridge)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$UBUNTU_VERSION</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;24.04&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_DISTRO</span><span class="o">=</span>jazzy
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_fastrtps_cpp
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">ISAACSIM_PATH</span><span class="si">}</span><span class="s2">/exts/isaacsim.ros2.bridge/jazzy/lib&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🧩 Detected Ubuntu 24.04 -&gt; Using ROS_DISTRO=jazzy&quot;</span>
+<span class="w">    </span><span class="c1"># If Ubuntu 22.04 -&gt; use the Isaac Sim internal ROS2 Humble (ROS2 Humble bridge)</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_DISTRO</span><span class="o">=</span>humble
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">RMW_IMPLEMENTATION</span><span class="o">=</span>rmw_fastrtps_cpp
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}</span><span class="s2">:</span><span class="si">${</span><span class="nv">ISAACSIM_PATH</span><span class="si">}</span><span class="s2">/exts/isaacsim.ros2.bridge/humble/lib&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🧩 Detected Ubuntu </span><span class="si">${</span><span class="nv">UBUNTU_VERSION</span><span class="k">:-</span><span class="nv">unknown</span><span class="si">}</span><span class="s2"> -&gt; Using ROS_DISTRO=humble&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+
+<span class="w">    </span><span class="c1"># ---------------------</span>
+<span class="w">    </span><span class="c1"># === RUN ISAAC SIM ===</span>
+<span class="w">    </span><span class="c1"># ---------------------</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="nv">$#</span><span class="w"> </span>-eq<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c1"># No args → Launch full Isaac Sim GUI</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🧠 Launching Isaac Sim GUI...&quot;</span>
+<span class="w">        </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ISAACSIM</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="w">    </span><span class="k">elif</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>--*<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c1"># Arguments start with &quot;--&quot; → pass them to Isaac Sim executable</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;⚙️  Launching Isaac Sim with options: </span><span class="nv">$*</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ISAACSIM</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+
+<span class="w">    </span><span class="k">elif</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span><span class="c1"># First argument is a Python file → run with Isaac Sim&#39;s Python</span>
+<span class="w">        </span><span class="nb">local</span><span class="w"> </span><span class="nv">SCRIPT_PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="nb">shift</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;🚀 Running Python script with Isaac Sim: </span><span class="nv">$SCRIPT_PATH</span><span class="s2">&quot;</span>
+<span class="w">        </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ISAACSIM_PYTHON</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SCRIPT_PATH</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="c1"># Unrecognized input</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;❌ Unknown argument or file not found: &#39;</span><span class="nv">$1</span><span class="s2">&#39;&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage:&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  isaac_run                 → launch GUI&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  isaac_run my_script.py    → run script with IsaacSim Python&quot;</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  isaac_run --headless ...  → launch IsaacSim with CLI flags&quot;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <p>In the remaining of the documentation, we will refer to the Isaac Sim’s path as <code class="docutils literal notranslate"><span class="pre">ISAACSIM_PATH</span></code> ,
@@ -187,10 +271,10 @@ open a new terminal window (<strong>Ctrl+Alt+T</strong>), and test the following
 <li><p>Check that the simulator app can be launched</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the simulator with the --help argument to see all available options</span>
-ISAACSIM<span class="w"> </span>--help
+isaac_run<span class="w"> </span>--help
 
 <span class="c1"># Run the simulator. A new window should open</span>
-ISAACSIM
+isaac_run
 </pre></div>
 </div>
 </div></blockquote>
