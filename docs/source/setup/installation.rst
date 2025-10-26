@@ -100,40 +100,49 @@ Add the following lines to your ``~/.bashrc`` or ``~/.zshrc`` file.
         # === CLEAN ENVIRONMENT ===
         # -------------------------
         # Unset ROS 2 environment variables to avoid conflicts with Isaac's Python 3.11
-        unset ROS_VERSION
-        unset ROS_PYTHON_VERSION
-        unset ROS_DISTRO
-        unset AMENT_PREFIX_PATH
-        unset COLCON_PREFIX_PATH
-        unset PYTHONPATH
-        unset CMAKE_PREFIX_PATH
+        unset ROS_VERSION ROS_PYTHON_VERSION ROS_DISTRO AMENT_PREFIX_PATH COLCON_PREFIX_PATH PYTHONPATH CMAKE_PREFIX_PATH
         
         # Remove ROS 2 paths from LD_LIBRARY_PATH if present
-        export LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | tr ':' '\n' | grep -v "/opt/ros/humble" | paste -sd':' -)
-        export LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | tr ':' '\n' | grep -v "/opt/ros/jazzy" | paste -sd':' -)
+        local ros_paths=("/opt/ros/humble" "/opt/ros/jazzy" "/opt/ros/iron")
+        for ros_path in "${ros_paths[@]}"; do
+            export LD_LIBRARY_PATH=$(echo "$LD_LIBRARY_PATH" | tr ':' '\n' | grep -v "^${ros_path}" | paste -sd':' -)
+        done
 
-        # Set the correct ROS2 Python version for Isaac Sim (Python 3.11) (using the isaac sim ros2 bridge extension)
-        export ROS_DISTRO=humble
-        export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${ISAACSIM_PATH}/exts/isaacsim.ros2.bridge/humble/lib
+        # -----------------------------
+        # === UBUNTU VERSION CHECK ===
+        # -----------------------------
+
+        if [ -f /etc/os-release ]; then
+            UBUNTU_VERSION=$(grep "^VERSION_ID=" /etc/os-release | cut -d'"' -f2)
+        fi
+
+        # If Ubuntu 24.04 -> use the Isaac Sim internal ROS2 Jazzy (ROS2 Jazzy bridge)
+        if [[ "$UBUNTU_VERSION" == "24.04" ]]; then
+            export ROS_DISTRO=jazzy
+            export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+            export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${ISAACSIM_PATH}/exts/isaacsim.ros2.bridge/jazzy/lib"
+            echo "🧩 Detected Ubuntu 24.04 -> Using ROS_DISTRO=jazzy"
+        # If Ubuntu 22.04 -> use the Isaac Sim internal ROS2 Humble (ROS2 Humble bridge)
+        else
+            export ROS_DISTRO=humble
+            export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+            export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${ISAACSIM_PATH}/exts/isaacsim.ros2.bridge/humble/lib"
+            echo "🧩 Detected Ubuntu ${UBUNTU_VERSION:-unknown} -> Using ROS_DISTRO=humble"
+        fi
 
         # ---------------------
         # === RUN ISAAC SIM ===
         # ---------------------
-
-        # If when running isaac_run we don't provide any arguments, launch the full Isaac Sim GUI.
         if [ $# -eq 0 ]; then
             # No args → Launch full Isaac Sim GUI
             echo "🧠 Launching Isaac Sim GUI..."
             "${ISAACSIM}"
 
-        # If when running isaac_run we provide arguments starting with "--", pass them to the Isaac Sim executable.
         elif [[ "$1" == --* ]]; then
             # Arguments start with "--" → pass them to Isaac Sim executable
             echo "⚙️  Launching Isaac Sim with options: $*"
             "${ISAACSIM}" "$@"
 
-        # If we provide a python file as the first argument, run it with Isaac Sim's python interpreter.
         elif [ -f "$1" ]; then
             # First argument is a Python file → run with Isaac Sim's Python
             local SCRIPT_PATH="$1"
