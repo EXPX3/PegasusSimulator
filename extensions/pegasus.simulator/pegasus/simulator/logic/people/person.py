@@ -72,10 +72,6 @@ class Person:
         self._world = PegasusInterface().world
         self._current_stage = self._world.stage
 
-        # Load the simulation manager
-        self.sim_manager = SimulationManager()
-        self.sim_manager.load_filters()
-
         # Variable that will hold the current state of the vehicle
         self._state = State()
         self._state.position = np.array(init_pos)
