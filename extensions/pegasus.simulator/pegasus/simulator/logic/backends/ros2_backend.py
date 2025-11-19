@@ -444,6 +444,30 @@ class ROS2Backend(Backend):
         # Set step input of the Isaac Simulation Gate nodes upstream of ROS publishers to control their execution rate
         og.Controller.attribute(gate_path + ".inputs:step").set(int(60/data["frequency"]))
 
+        # --- NEW CODE: PUBLISH STATIC TRANSFORM FOR THE LIDAR ---
+        if self._pub_tf:
+            # We use the parent frame as the vehicle's body link
+            parent_frame_id = self._namespace + '_' + 'base_link'
+            child_frame_id = data["camera_name"] # 'rtxlidar' or 'base_scan' if you change the Lidar initialization
+
+            t = TransformStamped()
+            t.header.stamp = self.node.get_clock().now().to_msg()
+            t.header.frame_id = parent_frame_id
+            t.child_frame_id = child_frame_id
+
+            # Hardcoded Lidar position/orientation relative to the body 
+            # (From Lidar.py: position=[0.0, 0.0, 0.10], orientation=identity quaternion [0, 0, 0, 1])
+            t.transform.translation.x = 0.1
+            t.transform.translation.y = 0.1
+            t.transform.translation.z = 0.10
+            t.transform.rotation.x = 0.0
+            t.transform.rotation.y = 0.0
+            t.transform.rotation.z = 0.0
+            t.transform.rotation.w = 1.0
+
+            # Send the static transform
+            self.tf_static_broadcaster.sendTransform(t)
+
     def update_lidar_data(self, data):
 
         # Check if the lidar name exists in the writers dictionary
@@ -468,6 +492,30 @@ class ROS2Backend(Backend):
         writer.initialize(nodeNamespace=self._namespace + str(self._id), topicName=data["lidar_name"] + "/laserscan", frameId=data["lidar_name"])
         writer.attach([render_prod_path])
         self.graphical_sensors_writers[data["lidar_name"]].append(writer)
+
+        # --- NEW CODE: PUBLISH STATIC TRANSFORM FOR THE LIDAR ---
+        if self._pub_tf:
+            # We use the parent frame as the vehicle's body link
+            parent_frame_id = self._namespace + '_' + 'base_link'
+            child_frame_id = data["lidar_name"] # 'rtxlidar' or 'base_scan' if you change the Lidar initialization
+
+            t = TransformStamped()
+            t.header.stamp = self.node.get_clock().now().to_msg()
+            t.header.frame_id = parent_frame_id
+            t.child_frame_id = child_frame_id
+
+            # Hardcoded Lidar position/orientation relative to the body 
+            # (From Lidar.py: position=[0.0, 0.0, 0.10], orientation=identity quaternion [0, 0, 0, 1])
+            t.transform.translation.x = 0.0
+            t.transform.translation.y = 0.0
+            t.transform.translation.z = 0.10
+            t.transform.rotation.x = 0.0
+            t.transform.rotation.y = 0.0
+            t.transform.rotation.z = 0.0
+            t.transform.rotation.w = 1.0
+
+            # Send the static transform
+            self.tf_static_broadcaster.sendTransform(t)
 
     def input_reference(self):
         """

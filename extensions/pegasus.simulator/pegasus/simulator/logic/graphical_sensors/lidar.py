@@ -43,8 +43,21 @@ class Lidar(GraphicalSensor):
         # Configurations of the Lidar
         self._position = config.get("position", np.array([0.0, 0.0, 0.10]))
         self._orientation = Rotation.from_euler("ZYX", config.get("orientation", np.array([0.0, 0.0, 0.0])), degrees=True).as_quat()
-        self._sensor_configuration = config.get("sensor_configuration", "Example_Rotary")
-        self._show_render = config.get("show_render", False)
+         # --- FIX for TypeError: string indices must be integers, not 'str' ---
+        # The downstream 'initialize' function expects self._sensor_configuration to be a dictionary
+        # and attempts to access 'sensor_configuration' inside it.
+        
+        preset_or_config = config.get("sensor_configuration", "Example_Rotary")
+        
+        if isinstance(preset_or_config, str):
+            # If the value is a string (a preset name or the default), wrap it in a dictionary
+            # structure that the downstream code expects for indexing.
+            self._sensor_configuration = {"sensor_configuration": preset_or_config}
+        else:
+            # If the user passed a dictionary (full config), use it directly.
+            self._sensor_configuration = preset_or_config
+        # --- END FIX ---
+        self._show_render = config.get("show_render", True)
 
         self._sensor = None
 
