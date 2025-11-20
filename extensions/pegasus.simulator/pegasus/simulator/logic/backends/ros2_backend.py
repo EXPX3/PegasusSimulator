@@ -94,6 +94,14 @@ class ROS2Backend(Backend):
             pass
 
         self.node = rclpy.create_node("simulator_vehicle_" + str(vehicle_id))
+        # Make this node use the ROS 2 /clock published by your OmniGraph
+        try:
+            self.node.declare_parameter('use_sim_time', True)
+        except Exception:
+            pass
+        # In case the parameter exists already, ensure it's set to True
+        from rclpy.parameter import Parameter
+        self.node.set_parameters([Parameter('use_sim_time', value=True)])
 
         # Initialize the publishers and subscribers
         self.initialize_publishers(config)
@@ -172,7 +180,8 @@ class ROS2Backend(Backend):
 
         # Create the transformation from base_link FLU (ROS standard) to base_link FRD (standard in airborn and marine vehicles)
         t = TransformStamped()
-        t.header.stamp = self.node.get_clock().now().to_msg()
+        t.header.stamp.sec = 0
+        t.header.stamp.nanosec = 0
         t.header.frame_id = self._namespace + '_' + 'base_link'
         t.child_frame_id = self._namespace + '_' + 'base_link_frd'
 
@@ -189,7 +198,8 @@ class ROS2Backend(Backend):
 
         # Create the transform from map, i.e inertial frame (ROS standard) to map_ned (standard in airborn or marine vehicles)
         t = TransformStamped()
-        t.header.stamp = self.node.get_clock().now().to_msg()
+        t.header.stamp.sec = 0
+        t.header.stamp.nanosec = 0
         t.header.frame_id = "map"
         t.child_frame_id = "map_ned"
         
@@ -451,7 +461,8 @@ class ROS2Backend(Backend):
             child_frame_id = data["camera_name"] # 'rtxlidar' or 'base_scan' if you change the Lidar initialization
 
             t = TransformStamped()
-            t.header.stamp = self.node.get_clock().now().to_msg()
+            t.header.stamp.sec = 0
+            t.header.stamp.nanosec = 0
             t.header.frame_id = parent_frame_id
             t.child_frame_id = child_frame_id
 
@@ -500,7 +511,8 @@ class ROS2Backend(Backend):
             child_frame_id = data["lidar_name"] # 'rtxlidar' or 'base_scan' if you change the Lidar initialization
 
             t = TransformStamped()
-            t.header.stamp = self.node.get_clock().now().to_msg()
+            t.header.stamp.sec = 0
+            t.header.stamp.nanosec = 0
             t.header.frame_id = parent_frame_id
             t.child_frame_id = child_frame_id
 
