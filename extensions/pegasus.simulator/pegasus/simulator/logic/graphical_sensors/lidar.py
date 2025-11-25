@@ -87,9 +87,9 @@ class Lidar(GraphicalSensor):
         # If show_render is True, then create a render product for the lidar in the Isaac Sim environment
         if self._show_render:
             hydra_texture = rep.create.render_product(self._sensor.GetPath(), [1, 1], name="Isaac")
-            # writer = rep.writers.get("RtxLidar" + "ROS2PublishPointCloud")
-            # writer.initialize(topicName="point_cloud", frameId="base_scan")
-            # writer.attach([hydra_texture])
+            writer = rep.writers.get("RtxLidar" + "ROS2PublishPointCloud")
+            writer.initialize(topicName="point_cloud", frameId="base_scan")
+            writer.attach([hydra_texture])
 
     @property
     def state(self):

@@ -94,14 +94,23 @@ class ROS2Backend(Backend):
             pass
 
         self.node = rclpy.create_node("simulator_vehicle_" + str(vehicle_id))
-        # Make this node use the ROS 2 /clock published by your OmniGraph
+        #Make this node use the ROS 2 /clock published by your OmniGraph
         try:
             self.node.declare_parameter('use_sim_time', True)
         except Exception:
             pass
-        # In case the parameter exists already, ensure it's set to True
+        #In case the parameter exists already, ensure it's set to True
         from rclpy.parameter import Parameter
         self.node.set_parameters([Parameter('use_sim_time', value=True)])
+        
+        #Make this node use the ROS 2 /clock published by your OmniGraph
+        # try:
+        #     self.node.declare_parameter('use_sim_time', False)
+        # except Exception:
+        #     pass
+        # #In case the parameter exists already, ensure it's set to True
+        # from rclpy.parameter import Parameter
+        # self.node.set_parameters([Parameter('use_sim_time', value=False)])
 
         # Initialize the publishers and subscribers
         self.initialize_publishers(config)
