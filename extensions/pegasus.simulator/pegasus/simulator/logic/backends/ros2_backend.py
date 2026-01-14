@@ -507,11 +507,11 @@ class ROS2Backend(Backend):
         # Add the writer to the dictionary
         self.graphical_sensors_writers[data["lidar_name"]] = [writer]
 
-        # Create the writer for publishing a laser scan message along with the point cloud
-        writer = rep.writers.get("RtxLidarROS2PublishLaserScan")
-        writer.initialize(nodeNamespace=self._namespace + str(self._id), topicName=data["lidar_name"] + "/laserscan", frameId=data["lidar_name"])
-        writer.attach([render_prod_path])
-        self.graphical_sensors_writers[data["lidar_name"]].append(writer)
+        # # Create the writer for publishing a laser scan message along with the point cloud
+        # writer = rep.writers.get("RtxLidarROS2PublishLaserScan")
+        # writer.initialize(nodeNamespace=self._namespace + str(self._id), topicName=data["lidar_name"] + "/laserscan", frameId=data["lidar_name"])
+        # writer.attach([render_prod_path])
+        # self.graphical_sensors_writers[data["lidar_name"]].append(writer)
 
         # --- NEW CODE: PUBLISH STATIC TRANSFORM FOR THE LIDAR ---
         if self._pub_tf:
