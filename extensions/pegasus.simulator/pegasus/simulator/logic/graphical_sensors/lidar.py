@@ -28,7 +28,7 @@ class Lidar(GraphicalSensor):
 
         # Position and Orientation
         self._position = config.get("position", np.array([0.075, 0.24, 0.075]))
-        euler_orient = config.get("orientation", np.array([0.0, 0.0, 0.0]))
+        euler_orient = config.get("orientation", np.array([0, 340, 180]))
         quat_xyzw = Rotation.from_euler("ZYX", euler_orient, degrees=True).as_quat()
         self._orientation = np.array([quat_xyzw[3], quat_xyzw[0], quat_xyzw[1], quat_xyzw[2]])
 
